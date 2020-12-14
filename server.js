@@ -13,7 +13,7 @@ var server = http.createServer(function (request, response) {
     {
       response.writeHead(200, {"Content-Type": "text/html"});
       response.write("Volume file data is: " +fileData +"<br/>");
-      response.write("'MESSAGE' (from evn volume): " +fileData +"<br/>");
+      response.write("'MESSAGE' (from volume): " +fileData +"<br/>");
     }
     response.end();
   });
