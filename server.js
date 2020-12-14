@@ -6,7 +6,7 @@ var server = http.createServer(function (request, response) {
     if(err)
     {
       response.writeHead(200, {"Content-Type": "text/html"});
-      response.write("Volume read ERROR" +"<br/>");
+      response.write("Volume read PROBLEM" +"<br/>");
       response.write(JSON.stringify(err));
       response.end();
     }
