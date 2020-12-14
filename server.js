@@ -8,14 +8,15 @@ var server = http.createServer(function (request, response) {
       response.writeHead(200, {"Content-Type": "text/html"});
       response.write("Error in reading volume:<br/>");
       response.write(JSON.stringify(err));
+      response.end();
     }
     else
     {
       response.writeHead(200, {"Content-Type": "text/html"});
       response.write("Volume file data is: " +fileData +"<br/>");
       response.write("'MESSAGE' (from volume): " +fileData +"<br/>");
+      response.end();
     }
-    response.end();
   });
 })
 
