@@ -9,12 +9,10 @@ var server = http.createServer(function (request, response)
       response.write("Error:<br/>");
       response.write(JSON.stringify(err));
     }
-    else
-    {
-        response.writeHead(200, {"Content-Type": "text/html"});
-        response.write("'MESSAGE' (from evn variable): " +process.env.MESSAGE +"<br/>");
-        response.write("'MESSAGE' (from volume): " +  fileData);
-    }
+    response.writeHead(200, {"Content-Type": "text/html"});
+    response.write("'MESSAGE' (from evn variable): " +process.env.MESSAGE +"<br/>");
+    response.write("'MESSAGE' (from volume): " +  fileData);
+    
     response.end();
   });
 });
