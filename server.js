@@ -5,7 +5,9 @@ var server = http.createServer(function (request, response)
   fs.readFile('/etc/config/MESSAGE', 'UTF-8', (err, fileData) => {
     if(err)
     {
-        console.log(err)
+      response.writeHead(200, {"Content-Type": "text/html"});
+      response.write("Error:<br/>");
+      response.write(JSON.stringify(err));
     }
     else
     {
@@ -13,6 +15,7 @@ var server = http.createServer(function (request, response)
         response.write("'MESSAGE' (from evn variable): " +process.env.MESSAGE +"<br/>");
         response.write("'MESSAGE' (from volume): " +  fileData);
     }
+    response.end();
   });
 });
 const port = process.env.PORT || 3000;
