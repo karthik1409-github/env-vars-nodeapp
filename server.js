@@ -13,6 +13,6 @@ var server = http.createServer(function (request, response)
     response.write("'MESSAGE' (from evn variable): " +process.env.MESSAGE +"<br/>");
     response.end();
   });
-});
+
 const port = process.env.PORT || 3000;
 server.listen(port, () => console.log(`Application listening on ${port}`));
